@@ -1,0 +1,37 @@
+{
+    "path": "assets/videos/",
+    "timeout": 10,
+    "intro": "man_perfume",
+    "init": "beach",
+    "videos": {
+        "beach": {
+            "video": "beach.mp4",
+            "button": [
+                {"오우, 수영하고싶은걸?": "butterfly"},
+                {"구경만 할레...": "man_mountain"}
+            ],
+            "noSelection": "butterfly"
+        },
+        "butterfly": {
+            "video": "butterfly.mp4",
+            "button": [
+                {"채집 한다": "candle"},
+                {"사진을 찍는다": "dslr"},
+                {"향기가 좋네, 향수로 만들다": "man_perfume"}
+            ],
+            "noSelection": "dslr"
+        },
+        "man_mountain": {
+            "video": "man_mountain.mp4"
+        },
+        "candle": {
+            "video": "candle.mp4"
+        },
+        "dslr": {
+            "video": "dslr.mp4"
+        },
+        "man_perfume": {
+            "video": "man_perfume.mp4"
+        }
+    }
+}
