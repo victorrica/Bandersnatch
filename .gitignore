@@ -1,5 +1,5 @@
 # Videos
-assets/video/*
+app/assets/video/*
 # Logs
 logs
 *.log

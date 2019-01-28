@@ -15,13 +15,14 @@ export default class Video extends Component<Props> {
     this.state = {
       percentage: 0,
       delay: 0,
-      showContent: false,
+      showContent: -100,
     }
   }
   renderContent(){
-    if(this.props.video.button && this.state.showContent) {
+    if(this.props.video.button) {
       return (
-        <div className={styles.content}>
+        <div className={styles.content}
+			style={{bottom: this.state.showContent}}>
             <div className={styles.progressBar} 
               style={{transition: 'width ' + this.state.delay + 's ease-in', width: this.state.percentage + '%'}}
               >
@@ -41,8 +42,8 @@ export default class Video extends Component<Props> {
     }
     this.setState({
       percentage: 0,
-      delay: 5,
-      showContent: false,
+      delay: 0,
+      showContent: -100,
     });
   }
 
@@ -57,7 +58,7 @@ export default class Video extends Component<Props> {
     }
   }
   componentDidMount(){
-    this.nextVideo();
+	this.nextVideo();
     let interval = setInterval(() => {
       let duration = this.refs.video?this.refs.video.duration:null;
       let currentTime = this.refs.video?this.refs.video.currentTime:null;
@@ -69,10 +70,10 @@ export default class Video extends Component<Props> {
         }
       } else if(duration - timeout <= currentTime) {
         this.setState({
-          delay: 5,
-          showContent: true
+          delay: this.props.video.timeout-1,
+		  percentage: 100,
+		  showContent: 0
         });
-        this.state.percentage+=100;
       }
       this.setState({interval: interval});
 
