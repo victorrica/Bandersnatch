@@ -50,15 +50,26 @@ export default class Video extends Component<Props> {
   renderButtons(){
     if(this.props.video.button) {
       const buttons = this.props.video.button.map((item, index) => 
-        <div key={index} className={styles.btn} onClick={ () => this.nextVideo(item[Object.keys(item)[0]])}>
-          <span>{Object.keys(item)[0]}</span>
+        <div key={index} className={styles.btn} onClick={ () => this.nextVideo(item.video)}>
+          <span>{item.name}</span>
         </div>
       );
       return buttons;
     }
   }
+
+  renderHiddenButtons(){
+    if(this.props.video.hiddenButton) {
+      const buttons = this.props.video.hiddenButton.map((item, index) =>
+        <div key={index} className={styles.hiddenBtn} style={item.style} onClick={ () => this.nextVideo(item.video)}>
+        </div>
+      );
+      return buttons;
+    }
+  }
+
   componentDidMount(){
-	this.nextVideo();
+	  this.nextVideo();
     let interval = setInterval(() => {
       let duration = this.refs.video?this.refs.video.duration:null;
       let currentTime = this.refs.video?this.refs.video.currentTime:null;
@@ -71,8 +82,8 @@ export default class Video extends Component<Props> {
       } else if(duration - timeout <= currentTime) {
         this.setState({
           delay: this.props.video.timeout-1,
-		  percentage: 100,
-		  showContent: 0
+          percentage: 100,
+          showContent: 0
         });
       }
       this.setState({interval: interval});
@@ -83,16 +94,21 @@ export default class Video extends Component<Props> {
   componentWillUnmount(){
     clearInterval(this.state.interval);
   }
+  playVideo() {
+    this.refs.video.pause();
+    this.refs.video.play();
+  }
 
   render() {
     return (
       <div className={styles.container}>
+        {this.renderHiddenButtons()}
         <div className={styles.backButton}>
           <Link to={routes.HOME}>
             <i className="fa fa-arrow-left fa-2x" />
           </Link>
         </div>
-        <video autoPlay ref="video" className={styles.screen} src={this.props.video.video}></video>
+        <video autoPlay ref="video" onClick={this.playVideo.bind(this)} className={styles.screen} src={this.props.video.video}></video>
         {this.renderContent()}
       </div>
     );

@@ -11,6 +11,7 @@ export function loadVideo(video) {
     type: 'LOAD_VIDEO',
     video: script.path + video.video,
     button: video.button,
+    hiddenButton: video.hiddenButton,
     noSelection: video.noSelection,
     timeout: video.timeout?video.timeout:script.timeout
   }

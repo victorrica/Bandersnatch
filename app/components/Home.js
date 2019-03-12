@@ -15,8 +15,7 @@ export default class Home extends Component<Props> {
       <div className={styles.container}>
         <video autoPlay loop className={styles.screen} src={introVideo}></video>
         <div className={styles.content}>
-          <Link className={styles.btn} to={routes.VIDEO}>처음부터</Link>
-          <Link className={styles.btn} to={routes.VIDEO}>이어하기</Link>
+          <Link className={styles.btn} to={routes.VIDEO}>시 작 하 기</Link>
         </div>
       </div>
     );

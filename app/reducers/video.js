@@ -9,6 +9,7 @@ export default function video(state: number = 0, action: Action) {
         ...state,
         video: action.video,
         button: action.button,
+        hiddenButton: action.hiddenButton,
         noSelection: action.noSelection,
         timeout: action.timeout,
         percentage: 0

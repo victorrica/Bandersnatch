@@ -1,26 +1,46 @@
 {
   "path": "assets/videos/",
   "timeout": 10,
-  "intro": "skull",
-  "init": "butterfly",
+  "intro": "4",
+  "init": "1",
   "videos": {
-    "butterfly": {
-      "video": "butterfly.mp4",
+    "1": {
+      "video": "1.mp4",
       "button": [
-        { "Button 1": "ship" },
-        { "Button 2": "skull" },
-        { "Button 3": "lighter" }
+        { "name": "뀨앙", "video" : "2" },
+        { "name": "흐앙", "video" : "3" }
       ],
-      "noSelection": "ship"
+      "noSelection": "2",
+      "timeout": 5
     },
-    "ship": {
-      "video": "ship.mp4"
+    "2": {
+      "video": "2.mp4",
+      "button": [
+        { "name": "힝..", "video" : "3" },
+        { "name": "후에에에엥", "video" : "4" }
+      ],
+      "hiddenButton": [
+        { 
+          "style": {
+            "width" : "100px", "height": "100px", "top": "10%", "right" : "10%", "left": "10%" 
+          }, 
+          "video": "4" 
+        }
+      ]
     },
-    "skull": {
-      "video": "skull.mp4"
+    "3": {
+      "video": "3.mp4",
+      "hiddenButton": [
+        { 
+          "style": {
+            "width" : "100px", "height": "100px", "top": "10%", "right" : "10%", "left": "10%" 
+          }, 
+          "video": "4" 
+        }
+      ]
     },
-    "lighter": {
-      "video": "lighter.mp4"
+    "4": {
+      "video": "4.mp4"
     }
   }
 }

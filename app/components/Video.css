@@ -216,3 +216,8 @@ table {
 .backButton:hover {
   opacity: 1;
 }
+.hiddenBtn {
+  position: absolute;
+  cursor: pointer;
+  z-index: 999;
+}
