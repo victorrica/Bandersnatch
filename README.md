@@ -7,8 +7,8 @@ In Bandersnatch, viewers make decisions for the main character, the young progra
 # What is this?
 
 A program that play movie with selection by script. User can interaction by choosing buttons with video.
-I'll upload interaction movie and script soon or later. It's gonna be fun. Also, You can edit script easily if you know JSON. 
-This from
+I'll upload interaction movie and script soon or later. It's gonna be fun. Also, You can edit script easily if you know the JSON format.
+
 
 # What can I do with the script ?
 1. Hidden button by coordinate by stylesheet( CSS ).
