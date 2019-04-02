@@ -11,14 +11,14 @@ I'll upload interaction movie and script soon or later. It's gonna be fun. Also,
 
 
 # What can I do with the script ?
-1. Hidden button by coordinate by stylesheet( CSS ).
-2. Choosing Button to play specific video.
-3. Naming the buttons.
-4. Setting time when the buttons showing up (timeout). even you can set global and partitial.
-4. Setting video as default every other scene that if user don't choose selection.
-5. Intro video for when user run the program ).
-6. Start Video ( First video that when start ) .
-7. Customize video paths.
+1. Hidden button by coordinate using stylesheet
+2. Choosing Button to play specific video
+3. Naming the buttons
+4. Setting time when the buttons showing up before the video ends. You can even set as global or partitial
+4. Setting video as default every other scene that if user don't choose selection
+5. Intro video. For when user runs the program
+6. Start Video. First video that when user hits the start button
+7. Customize video paths
 
 # I want to make interaction video. But, I can't write script at all.
 
