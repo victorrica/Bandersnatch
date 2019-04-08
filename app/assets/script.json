@@ -1,46 +1,67 @@
 {
   "path": "assets/videos/",
   "timeout": 10,
-  "intro": "4",
-  "init": "1",
+  "intro": "00_intro",
+  "init": "01_first_crossroads",
   "videos": {
-    "1": {
-      "video": "1.mp4",
+    "00_intro": {
+      "video": "00_intro.mp4"
+    },
+    "01_first_crossroads": {
+      "video": "01_first_crossroads.mp4",
       "button": [
-        { "name": "뀨앙", "video" : "2" },
-        { "name": "흐앙", "video" : "3" }
+        { "name": "못 박힌 나무길", "video" : "02_nail_tree" },
+        { "name": "발자국 길", "video" : "03_footprints_way" }
       ],
-      "noSelection": "2",
-      "timeout": 5
+      "noSelection": "02_nail_tree"
     },
-    "2": {
-      "video": "2.mp4",
+    "02_nail_tree": {
+      "video": "02_nail_tree.mp4",
+      "noSelection": "04_charnel_house"
+    },
+    "03_footprints_way": {
+      "video": "03_footprints_way.mp4",
+      "noSelection": "04_charnel_house"
+    },
+    "04_charnel_house": {
+      "video": "03_footprints way.mp4",
       "button": [
-        { "name": "힝..", "video" : "3" },
-        { "name": "후에에에엥", "video" : "4" }
+        { "name": "신는다", "video" : "04_charnel_house_with_shoes" },
+        { "name": "신지 않는다", "video" : "04_charnel_house_none_shoes" }
       ],
-      "hiddenButton": [
-        { 
-          "style": {
-            "width" : "100px", "height": "100px", "top": "10%", "right" : "10%", "left": "10%" 
-          }, 
-          "video": "4" 
-        }
-      ]
+      "noSelection": "04_charnel_house_with_shoes"
     },
-    "3": {
-      "video": "3.mp4",
-      "hiddenButton": [
-        { 
-          "style": {
-            "width" : "100px", "height": "100px", "top": "10%", "right" : "10%", "left": "10%" 
-          }, 
-          "video": "4" 
-        }
-      ]
+    "04_charnel_house_none_shoes": {
+      "video": "04_charnel_house_none_shoes.mp4",
+      "button": [
+        { "name": "엄마를 따라 간다", "video" : "05_following_mom_none_shoes" },
+        { "name": "자살 할까?", "video" : "07_suicide" },
+        { "name": "여우를 따라 간다", "video" : "06_following_fox_none_shoes" }
+      ],
+      "noSelection": "05_following_mom_none_shoes"
     },
-    "4": {
-      "video": "4.mp4"
+    "04_charnel_house_with_shoes": {
+      "video": "04_charnel_house_with_shoes.mp4",
+      "button": [
+        { "name": "엄마를 따라 간다", "video" : "05_following_mom_with_shoes" },
+        { "name": "여우를 따라 간다", "video" : "06_following_fox_with_shoes" }
+      ],
+      "noSelection": "05_following_mom_with_shoes"
+    },
+    "05_following_mom_none_shoes": {
+      "video": "05_following_mom_none_shoes.mp4"
+    },
+    "05_following_mom_with_shoes": {
+      "video": "05_following_mom_with_shoes.mp4"
+    },
+    "06_following_fox_none_shoes": {
+      "video": "06_following_fox_none_shoes.mp4"
+    },
+    "06_following_fox_with_shoes": {
+      "video": "06_following_fox_with_shoes.mp4"
+    },
+    "07_suicide": {
+      "video": "07_suicide.mp4"
     }
   }
 }

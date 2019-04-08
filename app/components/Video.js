@@ -87,7 +87,6 @@ export default class Video extends Component<Props> {
         });
       }
       this.setState({interval: interval});
-
     }, 1000);
   }
 
