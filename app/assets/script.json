@@ -24,7 +24,7 @@
       "noSelection": "04_charnel_house"
     },
     "04_charnel_house": {
-      "video": "03_footprints way.mp4",
+      "video": "04_charnel_house.mp4",
       "button": [
         { "name": "신는다", "video" : "04_charnel_house_with_shoes" },
         { "name": "신지 않는다", "video" : "04_charnel_house_none_shoes" }
@@ -49,19 +49,44 @@
       "noSelection": "05_following_mom_with_shoes"
     },
     "05_following_mom_none_shoes": {
-      "video": "05_following_mom_none_shoes.mp4"
+      "video": "05_following_mom_none_shoes.mp4",
+      "button": [
+        { "name": "처음부터", "video" : "01_first_crossroads" }
+      ],
+      "ending": true,
+      "timeout": 3
     },
     "05_following_mom_with_shoes": {
-      "video": "05_following_mom_with_shoes.mp4"
+      "video": "05_following_mom_with_shoes.mp4",
+      "button": [
+        { "name": "처음부터", "video" : "01_first_crossroads" }
+      ],
+      "ending": true,
+      "timeout": 3
     },
     "06_following_fox_none_shoes": {
-      "video": "06_following_fox_none_shoes.mp4"
+      "video": "06_following_fox_none_shoes.mp4",
+      "button": [
+        { "name": "처음부터", "video" : "01_first_crossroads" }
+      ],
+      "ending": true,
+      "timeout": 3
     },
     "06_following_fox_with_shoes": {
-      "video": "06_following_fox_with_shoes.mp4"
+      "video": "06_following_fox_with_shoes.mp4",
+      "button": [
+        { "name": "처음부터", "video" : "01_first_crossroads" }
+      ],
+      "ending": true,
+      "timeout": 3
     },
     "07_suicide": {
-      "video": "07_suicide.mp4"
+      "video": "07_suicide.mp4",
+      "button": [
+        { "name": "처음부터", "video" : "01_first_crossroads" }
+      ],
+      "ending": true,
+      "timeout": 3
     }
   }
 }

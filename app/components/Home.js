@@ -9,11 +9,15 @@ type Props = {};
 
 export default class Home extends Component<Props> {
   props: Props;
+
+  playVideo() {
+    this.refs.video.play();
+  }
   render() {
     let introVideo = script.path + script.videos[script.intro].video;
     return (
       <div className={styles.container}>
-        <video autoPlay loop className={styles.screen} src={introVideo}></video>
+        <video autoPlay loop className={styles.screen} src={introVideo} onClick={this.playVideo.bind(this)} ref="video"></video>
         <div className={styles.content}>
           <Link className={styles.btn} to={routes.VIDEO}>시 작 하 기</Link>
         </div>

@@ -14,17 +14,18 @@ export default class Video extends Component<Props> {
 
     this.state = {
       percentage: 0,
+      percentageVisible: 'visible',
       delay: 0,
       showContent: -100,
+      buttonChanged: false
     }
   }
   renderContent(){
     if(this.props.video.button) {
       return (
-        <div className={styles.content}
-			style={{bottom: this.state.showContent}}>
+        <div className={styles.content} style={{bottom: this.state.showContent}}>
             <div className={styles.progressBar} 
-              style={{transition: 'width ' + this.state.delay + 's ease-in', width: this.state.percentage + '%'}}
+              style={{transition: 'width ' + this.state.delay + 's ease-in', width: this.state.percentage + '%', visibility: this.state.percentageVisible}}
               >
               <div className={styles.filler}></div>
             </div>
@@ -35,20 +36,29 @@ export default class Video extends Component<Props> {
   }
 
   nextVideo(video){
-    if(video) {
-      this.props.nextVideo(video);
-    } else{
-      this.props.nextVideo();
-    }
+    console.log("NEXT VIDEO / ", video);
     this.setState({
       percentage: 0,
       delay: 0,
       showContent: -100,
+      buttonChanged: false,
     });
+
+    if(video) {
+      this.props.nextVideo(video);
+    } else {
+      // INIT VIDEO
+      this.props.nextVideo();
+    }
+    setTimeout(() => {
+      this.setState({
+        buttonChanged: true
+      });
+    }, 2000);
   }
 
   renderButtons(){
-    if(this.props.video.button) {
+    if(this.props.video.button && this.state.buttonChanged) {
       const buttons = this.props.video.button.map((item, index) => 
         <div key={index} className={styles.btn} onClick={ () => this.nextVideo(item.video)}>
           <span>{item.name}</span>
@@ -74,15 +84,25 @@ export default class Video extends Component<Props> {
       let duration = this.refs.video?this.refs.video.duration:null;
       let currentTime = this.refs.video?this.refs.video.currentTime:null;
       let {timeout, noSelection} = this.props.video;
+
+      console.log("DURATION / ", duration);
+      console.log("CURRENTTIME / ", currentTime);
+      console.log("NOSELECTION / ", noSelection);
       
+      // IF DO NOT SELECT BUTTONS
       if(duration <= currentTime) {
+        console.log("VIDEO DONE");
         if(noSelection) {
           this.nextVideo(noSelection);
         }
-      } else if(duration - timeout <= currentTime) {
+      } 
+      // BUTTON SHOWING TIME
+      else if(duration - timeout <= currentTime && this.props.video.button) {
+        console.log("SHOWING BUTTON");
         this.setState({
-          delay: this.props.video.timeout-1,
+          delay: this.props.video.timeout - 1,
           percentage: 100,
+          percentageVisible: this.props.video.ending?'hidden':'visible',
           showContent: 0
         });
       }
@@ -94,7 +114,6 @@ export default class Video extends Component<Props> {
     clearInterval(this.state.interval);
   }
   playVideo() {
-    this.refs.video.pause();
     this.refs.video.play();
   }
 

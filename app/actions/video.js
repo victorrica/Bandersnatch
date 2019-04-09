@@ -13,25 +13,14 @@ export function loadVideo(video) {
     button: video.button,
     hiddenButton: video.hiddenButton,
     noSelection: video.noSelection,
-    timeout: video.timeout?video.timeout:script.timeout
-  }
-}
-
-export function loadEndingVideo(video) {
-  return {
-    type: 'LOAD_ENDING_VIDEO',
-    video: script.path + video.video,
+    timeout: video.timeout?video.timeout:script.timeout,
+    ending: video.ending
   }
 }
 
 export function nextVideo(video = script.init) {
   return(dispatch: Dispatch, getState: getState) => {
     let videoPath = script.videos[video];
-    if(videoPath.button != null) {
-      dispatch(loadVideo(videoPath));
-    } else {
-      dispatch(loadEndingVideo(videoPath));
-    }
-   
+    dispatch(loadVideo(videoPath));
   }
 }

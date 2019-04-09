@@ -12,16 +12,8 @@ export default function video(state: number = 0, action: Action) {
         hiddenButton: action.hiddenButton,
         noSelection: action.noSelection,
         timeout: action.timeout,
-        percentage: 0
-      }
-    case LOAD_ENDING_VIDEO:
-      return {
-        ...state,
-        video: action.video,
-        timeout: action.timeout,
-        button: null,
-        noSelection: null,
-        percentage: 0
+        percentage: 0,
+        ending: action.ending
       }
     default:
       return state;

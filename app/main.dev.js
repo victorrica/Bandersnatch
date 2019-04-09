@@ -70,7 +70,8 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
-    height: 728
+    height: 728,
+    icon: './assets/dist/bandersnatch.png',
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
