@@ -50,6 +50,7 @@ export default class Video extends Component<Props> {
       // INIT VIDEO
       this.props.nextVideo();
     }
+    // BUTTON CHANGES AFTER 2SEC TRANSITION EFFECT
     setTimeout(() => {
       this.setState({
         buttonChanged: true

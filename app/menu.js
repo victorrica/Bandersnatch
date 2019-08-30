@@ -6,11 +6,13 @@ export default class MenuBuilder {
 
   constructor(mainWindow: BrowserWindow) {
     this.mainWindow = mainWindow;
+    this.mainWindow.maximize();
     this.mainWindow.setResizable(false);
     this.mainWindow.setFullScreen(true);
     this.mainWindow.setMovable(false);
-    this.mainWindow.isMinimizable(false);
-    this.mainWindow.isMaximizable(false);
+    this.mainWindow.frame(false);
+    this.mainWindow.transparent(true);
+    
     this.mainWindow.setTitle(require('../package.json').productName);
   }
 

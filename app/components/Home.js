@@ -10,6 +10,9 @@ type Props = {};
 export default class Home extends Component<Props> {
   props: Props;
 
+  componentDidMount(){
+  }
+
   playVideo() {
     this.refs.video.play();
   }

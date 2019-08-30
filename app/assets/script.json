@@ -29,7 +29,7 @@
         { "name": "신는다", "video" : "04_charnel_house_with_shoes" },
         { "name": "신지 않는다", "video" : "04_charnel_house_none_shoes" }
       ],
-      "noSelection": "04_charnel_house_with_shoes"
+      "noSelection": "04_charnel_house_none_shoes"
     },
     "04_charnel_house_none_shoes": {
       "video": "04_charnel_house_none_shoes.mp4",
@@ -38,7 +38,7 @@
         { "name": "자살 할까?", "video" : "07_suicide" },
         { "name": "여우를 따라 간다", "video" : "06_following_fox_none_shoes" }
       ],
-      "noSelection": "05_following_mom_none_shoes"
+      "noSelection": "07_suicide"
     },
     "04_charnel_house_with_shoes": {
       "video": "04_charnel_house_with_shoes.mp4",
